@@ -1,0 +1,29 @@
+
+<button (click)="agregarPelicula()">Agregar Pelicula</button>
+
+<p>listado-peliculas works!</p>
+@if(!peliculas){
+<img src="https://miro.medium.com/max/882/1*9EBHIOzhE1XfMYoKz1JcsQ.gif" />
+}
+@else if (peliculas.length===0) {
+<div>
+    <p>NO HAY ELEMENTOS</p>
+</div>
+}
+@else {
+
+@for (pelicula of peliculas; track $index) {
+<div class="contenedor-pelicula">
+    <div style="display: flex; flex-direction: row; gap: 10px;">
+        <div>
+            <img [src]="pelicula.poster" width="169" height="250">
+        </div>
+        <div>
+            <p>{{$index}}) Película: {{pelicula.titulo}}</p>
+            <P>Fecha Lanzamiento: {{pelicula.fechaLanzamiento | date:"dd-MM-yyyy"}}</P>
+            <p>Precio: {{pelicula.precio | currency}}</p>
+        </div>
+    </div>
+</div>
+}
+}
