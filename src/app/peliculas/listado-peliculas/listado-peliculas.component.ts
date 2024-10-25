@@ -22,4 +22,9 @@ export class ListadoPeliculasComponent  {
       precio: 500
     })
   }
+
+  remover(pelicula:any){
+    const indice = this.peliculas.findIndex((pelicuLaActual : any) => pelicuLaActual.titulo === pelicula.titulo);
+    this.peliculas.splice(indice,1);
+  }
 }
