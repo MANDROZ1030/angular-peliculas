@@ -1,34 +1,23 @@
-<button (click)="agregarPelicula()">Agregar Pelicula</button>
-
-<p>listado-peliculas works!</p>
-@if(!peliculas){
-<img src="https://miro.medium.com/max/882/1*9EBHIOzhE1XfMYoKz1JcsQ.gif" />
-}
-@else if (peliculas.length===0) {
-<div>
-    <p>NO HAY ELEMENTOS</p>
-</div>
-}
-@else {
-
-@for (pelicula of peliculas; track $index) {
-<div class="contenedor-pelicula">
-    <div style="display: flex; flex-direction: row; gap: 10px;">
-        <div>
-            @if (pelicula.poster)
-            {
-            <img [src]="pelicula.poster" width="169" height="250">
+<div class="peliculas-contenedor">
+    @for (pelicula of peliculas; track $index) {
+    <div class="pelicula-contenedor">
+        <a>
+            @if (pelicula.poster) {
+            <img [src]="pelicula.poster" width="169" height="250" />
             }@else {
-            <img src="default.jpg" width="169" height="250">
+            <img srcc="default.jpg" width="169" height="250" />
             }
-        </div>
+        </a>
+        <p>
+            <a>
+              {{pelicula.titulo}}  
+            </a>
+        </p>
         <div>
-            <p>{{$index}}) Película: {{pelicula.titulo}}</p>
-            <P>Fecha Lanzamiento: {{pelicula.fechaLanzamiento | date:"dd-MM-yyyy"}}</P>
-            <p>Precio: {{pelicula.precio | currency}}</p>
-            <button (click)="remover(pelicula)">Remover</button>
+            <a mat-flat-button>Editar</a>
+            <button mat-flat-button type="button" color="warn">Borrar</button>
         </div>
     </div>
+    }
+
 </div>
-}
-}
