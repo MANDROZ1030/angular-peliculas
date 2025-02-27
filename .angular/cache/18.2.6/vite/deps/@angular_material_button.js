@@ -4,8 +4,8 @@ import {
   MatRippleLoader,
   MatRippleModule,
   Platform
-} from "./chunk-RKZSTDPM.js";
-import "./chunk-FRFD64NH.js";
+} from "./chunk-A6CSQJDF.js";
+import "./chunk-V4S2AFUU.js";
 import {
   ANIMATION_MODULE_TYPE,
   ChangeDetectionStrategy,
@@ -42,7 +42,7 @@ import {
   ɵɵinvalidFactory,
   ɵɵprojection,
   ɵɵprojectionDef
-} from "./chunk-TECVHXSB.js";
+} from "./chunk-54IE7K2P.js";
 
 // node_modules/@angular/material/fesm2022/button.mjs
 var _c0 = ["mat-button", ""];
