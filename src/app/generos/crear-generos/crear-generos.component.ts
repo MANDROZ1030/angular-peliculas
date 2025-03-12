@@ -17,8 +17,9 @@ import { GeneroCreacionDTO } from '../generos';
 })
 export class CrearGenerosComponent {
 
-  router = inject(Router);
-  
+  private router = inject(Router);
+
+
   guardarCambios(genero:GeneroCreacionDTO) {
     //...guardar cambios
     //this.router.navigate(['/generos']);
