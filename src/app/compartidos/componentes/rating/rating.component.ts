@@ -3,11 +3,10 @@ import { Component, EventEmitter, Input, OnInit, Output, output } from '@angular
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-rating',
-  standalone: true,
-  imports: [MatIconModule, NgClass],
-  templateUrl: './rating.component.html',
-  styleUrl: './rating.component.css'
+    selector: 'app-rating',
+    imports: [MatIconModule, NgClass],
+    templateUrl: './rating.component.html',
+    styleUrl: './rating.component.css'
 })
 export class RatingComponent implements OnInit {
   ngOnInit(): void {

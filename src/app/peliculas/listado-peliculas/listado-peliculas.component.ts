@@ -4,11 +4,10 @@ import { MatButtonModule} from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-listado-peliculas',
-  standalone: true,
-  imports: [DatePipe,CurrencyPipe , MatButtonModule, MatIconModule],
-  templateUrl: './listado-peliculas.component.html',
-  styleUrl: './listado-peliculas.component.css'
+    selector: 'app-listado-peliculas',
+    imports: [DatePipe, CurrencyPipe, MatButtonModule, MatIconModule],
+    templateUrl: './listado-peliculas.component.html',
+    styleUrl: './listado-peliculas.component.css'
 })
 export class ListadoPeliculasComponent  {
 

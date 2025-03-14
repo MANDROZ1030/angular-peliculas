@@ -2,11 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ListadoPeliculasComponent } from "../peliculas/listado-peliculas/listado-peliculas.component";
 
 @Component({
-  selector: 'app-landing-page',
-  standalone: true,
-  imports: [ListadoPeliculasComponent],
-  templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.css'
+    selector: 'app-landing-page',
+    imports: [ListadoPeliculasComponent],
+    templateUrl: './landing-page.component.html',
+    styleUrl: './landing-page.component.css'
 })
 export class LandingPageComponent implements OnInit {
   ngOnInit(): void {
