@@ -1,11 +1,11 @@
 import {
-  require_moment
-} from "./chunk-3QH3VH4Z.js";
-import {
   DateAdapter,
   MAT_DATE_FORMATS,
   MAT_DATE_LOCALE
 } from "./chunk-ENEXBIKL.js";
+import {
+  require_moment
+} from "./chunk-3QH3VH4Z.js";
 import "./chunk-CNZARQAN.js";
 import "./chunk-AN23FHX4.js";
 import "./chunk-6TBMGQEH.js";

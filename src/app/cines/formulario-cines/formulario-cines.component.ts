@@ -6,12 +6,14 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { RouterLink } from '@angular/router';
 import { CineCreacionDTO } from '../cines';
+import { MapaComponent } from "../../compartidos/componentes/mapa/mapa.component";
+import { Coordenada } from '../../compartidos/componentes/mapa/coordenadas';
 
 @Component({
   selector: 'app-formulario-cines',
@@ -22,7 +24,8 @@ import { CineCreacionDTO } from '../cines';
     MatInputModule,
     MatButtonModule,
     RouterLink,
-  ],
+    MapaComponent
+],
   templateUrl: './formulario-cines.component.html',
   styleUrl: './formulario-cines.component.css',
 })
@@ -30,6 +33,7 @@ export class FormularioCinesComponent implements OnInit {
   ngOnInit(): void {
     if (this.modelo !== undefined) {
       this.form.patchValue(this.modelo);
+      this.coordenadaIniciales.push({latitud:this.modelo.latitud , longitud:this.modelo.longitud})
     }
   }
 
@@ -39,10 +43,15 @@ export class FormularioCinesComponent implements OnInit {
   @Output()
   posteoFormulario = new EventEmitter<CineCreacionDTO>();
 
+
+  coordenadaIniciales : Coordenada[] = [];
+
   private formBuilder = inject(FormBuilder);
 
   form = this.formBuilder.group({
     nombre: ['', { validators: [Validators.required] }],
+    latitud: new FormControl<Number | null>(null , [Validators.required]),
+    longitud: new FormControl<Number | null>(null , [Validators.required])
   });
 
   obtenerErrorCampoNombre(): string {
@@ -52,6 +61,10 @@ export class FormularioCinesComponent implements OnInit {
       return `El campo nombre es requerido.`;
     }
     return '';
+  }
+
+  coordenadaSeleccionada(coordenada : Coordenada){
+    this.form.patchValue(coordenada);
   }
 
   guardarCambios(){

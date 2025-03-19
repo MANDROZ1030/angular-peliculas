@@ -5,6 +5,7 @@ import { RouterLink } from '@angular/router';
 @Component({
     selector: 'app-indice-actores',
     imports: [RouterLink, MatButtonModule],
+    standalone:true,
     templateUrl: './indice-actores.component.html',
     styleUrl: './indice-actores.component.css'
 })
